@@ -8,14 +8,20 @@ import org.springframework.stereotype.Service;
 @Service
 public class ContactService {
 
+    //-----------------REPOSITORY INJECTED TO SERVICE---------------------------
     @Autowired
     private Contactrepository contactrepository;
 
-    public ContactService(Contactrepository contactrepository) {
+    public ContactService(Contactrepository contactrepository)
+    {
         this.contactrepository = contactrepository;
     }
+//-----------------REPOSITORY INJECTED TO SERVICE---------------------------
 
-    public String saveContact(Contact contact) {
+
+    public String
+    saveContact(Contact contact) {
+
 //getEmail() not work when getter setter method are missing------------------------------------------------
         if (contact.getEmail() == null || contact.getEmail().isBlank()) {
             return "Email is required";
@@ -30,7 +36,8 @@ public class ContactService {
         return "Contact Saved Successfully";
     }
 
-    public long totalContacts() {
+    public long totalContacts()
+    {
         return contactrepository.count();
     }
 }

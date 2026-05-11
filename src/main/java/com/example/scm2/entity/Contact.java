@@ -10,6 +10,7 @@ public class Contact {
     // id auto genrate serialwise
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
+    public Integer id;
     public String username;
 
 

@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
 </head>
 <body>
 <div>
 
-</div>
-<input type="text" th:fields="*{username}"required>
-<input type="text"  th:fiels="*{email}"required>
-<input type="text" th:fiels="*{phone}">
-<input  type="text" th:fields="*{nickname}">
 
+<form th:action="@{/addcontact}"    method="post">
+<input type="text" th:field="*{username}"required>
+<input type="text"  th:field="*{email}"required>
+<input type="text" th:field="*{phone}">
+<input  type="text" th:field="*{nickname}">
+    <button type="submit">Save</button>
+</form>
+</div>
 </body>
 </html>

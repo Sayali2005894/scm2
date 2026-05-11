@@ -1,23 +1,19 @@
 package com.example.scm2.controller;
 
+import com.example.scm2.service.ContactService;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class PageController {
-    @RequestMapping("/home")
-    public String home(Model model)
-    {
-        model.addAttribute("name","shree technology");
-        model.addAttribute("githubrepository","https://github.com/Sayali2005894");
-        return"home";
-    }
+//-----------------------SERVICE INJECTED--------------------------------------
+  //variable declartion
+    private final ContactService contactService;
 
-    @RequestMapping("/about")
-    public String aboutpage()
+    //constructor injection
+    public PageController (ContactService contactService)
     {
-        System.out.println("abot page loading");
-        return "about";
+        this.contactService=contactService;
     }
+    //-----------------------SERVICE INJECTED--------------------------------------
+
 }
